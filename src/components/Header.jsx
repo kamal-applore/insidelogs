@@ -5,6 +5,7 @@ import NavbarItems from './NavbarItems'
 // import Logo from './Images/Logo'
 import CloseIcon from '@material-ui/icons/Close'
 import MenuIcon from '@material-ui/icons/Menu'
+import Logo from './Logo'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -12,10 +13,11 @@ const useStyles = makeStyles((theme) => ({
     boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.1)',
     [theme.breakpoints.up('md')]: {
       padding: '15px 22px 6px 22px',
-      boxShadow: 'none',
+      // boxShadow: 'none',
     },
     [theme.breakpoints.up('lg')]: {
       padding: '26px 97px 0px 145px',
+      boxShadow: 'none',
     },
   },
   navBarList: {
@@ -46,12 +48,13 @@ const useStyles = makeStyles((theme) => ({
     transition: 'all 0.5s ease',
     zIndex: 1,
     height: '100vh',
-    top: '58px',
+    // top: '58px',
+    padding: 0,
   },
   icon: {
     display: 'block',
     position: 'absolute',
-    top: 0,
+    top: '12px',
     right: 0,
     transform: 'translate(-26%, 38%)',
     cursor: 'pointer',
@@ -66,7 +69,9 @@ export default () => {
     <>
       <Hidden mdDown>
         <Box display="flex" className={classes.root}>
-          <Box flexGrow={1}>{/* <Logo /> */}</Box>
+          <Box flexGrow={1}>
+            <Logo />
+          </Box>
           <Box display="flex" className={classes.navBarList}>
             <NavbarItems />
           </Box>
@@ -75,7 +80,9 @@ export default () => {
       <Hidden lgUp>
         <Box className={classes.root}>
           <nav className={classes.navbarItems}>
-            <Box flexGrow={1}>{/* <Logo /> */}</Box>
+            <Box flexGrow={1}>
+              <Logo />
+            </Box>
             <div className={classes.icon} onClick={showSidebar}>
               {sidebar ? <CloseIcon color="primary" /> : <MenuIcon color="primary" />}
             </div>

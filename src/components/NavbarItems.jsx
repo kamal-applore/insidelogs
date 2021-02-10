@@ -8,42 +8,49 @@ import { useHistory, useLocation } from 'react-router-dom'
 const useStyles = makeStyles((theme) => ({
   label: {
     '&:hover': {
-      color: theme.palette.primary.dark,
       transition: 'all 0.4s ease 0s',
+      [theme.breakpoints.up('lg')]: {
+        backgroundColor: theme.palette.primary.main,
+        color: theme.palette.common.white,
+        padding: '14px 17px',
+        borderRadius: '10px',
+        marginRight: '42px',
+      },
     },
     color: theme.palette.common.black,
-    textDecoration: 'none',
-    paddingTop: '11px',
+    paddingTop: '20px',
     cursor: 'pointer',
-    fontSize: '19px',
+    fontSize: '30px',
     textAlign: 'center',
     [theme.breakpoints.up('md')]: {
       fontSize: '24px',
-      paddingTop: '21px',
+      paddingTop: '35px',
     },
     [theme.breakpoints.up('lg')]: {
-      fontSize: '16px',
+      fontSize: '20px',
       lineHeight: '19.5px',
-      paddingRight: '28px',
+      paddingRight: '48px',
       paddingTop: '0px',
     },
   },
   active: {
-    color: theme.palette.primary.dark,
+    color: theme.palette.primary.main,
     textDecoration: 'underline',
+    fontWeight: theme.typography.fontWeightBold,
     [theme.breakpoints.up('lg')]: {
       textDecoration: 'none',
+
+      backgroundColor: theme.palette.primary.main,
+      color: theme.palette.common.white,
+      padding: '14px 17px',
+      borderRadius: '10px',
+      marginRight: '41px',
     },
-  },
-  divider: {
-    display: 'none',
-    [theme.breakpoints.up('lg')]: {
-      display: 'block',
-      width: '100%',
-      height: '2px',
-      backgroundColor: theme.palette.primary.dark,
-      marginTop: '8px',
-    },
+    // [theme.breakpoints.up('lg')]: {
+    //   textDecoration: 'none',
+    //   padding: '14px 17px',
+    //   // marginRight: '42px',
+    // },
   },
 }))
 
@@ -66,7 +73,7 @@ export default () => {
             <CustomLabel
               label={item.navItem}
               className={`${isActive ? classes.active + ' ' + classes.label : classes.label}`}
-              underline={isActive ? <Divider className={classes.divider} /> : null}
+              // underline={isActive ? <Divider className={classes.divider} /> : null}
             />
             {/* {isActive ? <Divider className={classes.divider} /> : null} */}
           </div>
