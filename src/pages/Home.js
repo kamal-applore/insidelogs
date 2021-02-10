@@ -2,6 +2,7 @@
 import { makeStyles } from '@material-ui/core'
 import React from 'react'
 import Layout from '../components/Layout'
+import Contact from '../sections/Contact'
 import CTABanner from '../sections/CTABanner'
 import HeroSection from '../sections/HeroSection'
 import OurServices from '../sections/OurServices'
@@ -10,7 +11,7 @@ import WhyUs from '../sections/WhyUs'
 const useStyles = makeStyles((theme) => ({
   root: {
     [theme.breakpoints.up('md')]: {
-      paddingLeft: '80px',
+      paddingLeft: '70px',
     },
     [theme.breakpoints.up('lg')]: {
       paddingLeft: '130px',
@@ -57,6 +58,11 @@ export default () => {
       </div>
       {/* < */}
       <CTABanner />
+      <div className={classes.root}>
+        <div className={classes.ourServices}>
+          <Contact />
+        </div>
+      </div>
     </Layout>
   )
 }

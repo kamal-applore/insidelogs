@@ -11,7 +11,7 @@ const useStyles = makeStyles((theme) => ({
       fontSize: '20px',
     },
     [theme.breakpoints.up('lg')]: {
-      fontWeight: theme.typography.fontWeightBold,
+      // fontWeight: theme.typography.fontWeightBold,
       padding: '15px 18px',
       fontSize: '20px',
     },
