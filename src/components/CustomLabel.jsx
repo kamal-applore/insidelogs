@@ -9,28 +9,15 @@ const useStyles = makeStyles((theme) => ({
     fontSize: '16px',
     fontWeight: 400,
     // textAlign: 'center',
-    [theme.breakpoints.up('md')]: { textAlign: 'left', lineHeight: '24px' },
+    [theme.breakpoints.up('md')]: { textAlign: 'left', lineHeight: '26px', fontSize: '18px' },
+    [theme.breakpoints.up('lg')]: { lineHeight: '30px', fontSize: '20px' },
   },
   icon: {
     paddingLeft: '13px',
   },
 }))
 
-export default ({ label, className, icon, onClick, underline }) => {
+export default ({ label, className, onClick, center }) => {
   const classes = useStyles()
-  return (
-    <>
-      {icon ? (
-        <Box display="flex">
-          <Typography className={className ? `${className} ${classes.label}` : classes.label}> {label} </Typography>
-          {icon ? <div className={`${className} ${classes.icon}`}>{icon}</div> : null}
-        </Box>
-      ) : (
-        <Typography className={className ? `${className} ${classes.label}` : classes.label} onClick={onClick}>
-          {label}
-          {underline}
-        </Typography>
-      )}
-    </>
-  )
+  return <Typography className={className ? `${className} ${classes.label}` : classes.label}> {label} </Typography>
 }
