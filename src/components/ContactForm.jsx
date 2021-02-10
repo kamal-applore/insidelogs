@@ -37,7 +37,7 @@ export default function ContactForm() {
         </Grid>
         <Grid item md={1} />
         <Grid item xs={12} md={6}>
-          <CustomInput placeholder="PHONE NO." value={mobile} handleChange={setMobile} />
+          <CustomInput placeholder="PHONE NO." value={mobile} handleChange={setMobile} phone />
         </Grid>
 
         <Grid item xs={12} md={5}>

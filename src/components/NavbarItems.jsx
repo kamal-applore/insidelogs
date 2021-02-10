@@ -4,6 +4,7 @@ import { Divider, makeStyles } from '@material-ui/core'
 import CustomLabel from './CustomLabel'
 import { ROUTES } from '../shared/constants'
 import { useHistory, useLocation } from 'react-router-dom'
+import { SearchOutlined } from '@material-ui/icons'
 
 const useStyles = makeStyles((theme) => ({
   label: {
@@ -61,6 +62,7 @@ export default () => {
     { navItem: 'About', url: ROUTES.ABOUT },
     { navItem: 'Blog', url: ROUTES.BLOG },
     { navItem: 'Contact', url: ROUTES.CONTACT },
+    { logo: 'logo' },
   ]
   const history = useHistory()
   const location = useLocation()
@@ -70,11 +72,15 @@ export default () => {
         const isActive = location.pathname === item.url
         return (
           <div key={index} onClick={() => history.push(item.url)}>
-            <CustomLabel
-              label={item.navItem}
-              className={`${isActive ? classes.active + ' ' + classes.label : classes.label}`}
-              // underline={isActive ? <Divider className={classes.divider} /> : null}
-            />
+            {item.logo ? (
+              <SearchOutlined />
+            ) : (
+              <CustomLabel
+                label={item.navItem}
+                className={`${isActive ? classes.active + ' ' + classes.label : classes.label}`}
+                // underline={isActive ? <Divider className={classes.divider} /> : null}
+              />
+            )}
             {/* {isActive ? <Divider className={classes.divider} /> : null} */}
           </div>
         )

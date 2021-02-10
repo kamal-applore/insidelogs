@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-export default ({ label, value, handleChange, errorMessage, contactError, placeholder }) => {
+export default ({ label, value, handleChange, errorMessage, contactError, placeholder, phone }) => {
   const classes = useStyles()
   const renderInputStyle = !errorMessage ? classes.textField : `${classes.textField} ${classes.errorInput}`
   const handleOnChange = (event) => {
@@ -46,6 +46,8 @@ export default ({ label, value, handleChange, errorMessage, contactError, placeh
         className={renderInputStyle}
         value={value}
         onChange={handleOnChange}
+        autoComplete="off"
+        inputMode={phone ? 'tel' : 'text'}
       />
     </>
   )
