@@ -42,17 +42,24 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-export default function CTABanner() {
+export default function CTABanner({ heading, label, about, button }) {
   const classes = useStyles()
   return (
     <div className={classes.root}>
-      <CustomLabel label="Brightest Minds, Impactful Opportunities" className={classes.textWhite} />
-      <CustomHeading
-        heading="We are here to help brightest minds to endeavor their endless success"
-        className={`${classes.heading} ${classes.textWhite}`}
-      />
+      {about ? (
+        <div>
+          <CustomHeading heading={heading} className={`${classes.heading} ${classes.textWhite}`} />
+          <br />
+          <CustomLabel label={label} className={classes.textWhite} />
+        </div>
+      ) : (
+        <div>
+          <CustomLabel label={label} className={classes.textWhite} />
+          <CustomHeading heading={heading} className={`${classes.heading} ${classes.textWhite}`} />
+        </div>
+      )}
       <br />
-      <CustomButton text="Join With Us" className={classes.button} />
+      <CustomButton text={button} className={classes.button} />
     </div>
   )
 }

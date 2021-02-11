@@ -12,11 +12,11 @@ import Icon4 from '../assets/images/icon4.png'
 import CustomImage from '../components/CustomImage'
 
 const useStyles = makeStyles((theme) => ({
-  content: {
-    marginTop: '30px',
-    [theme.breakpoints.up('md')]: { marginTop: '50px' },
-    [theme.breakpoints.up('lg')]: { marginTop: '85px' },
-  },
+  // content: {
+  //   marginTop: '30px',
+  //   [theme.breakpoints.up('md')]: { marginTop: '50px' },
+  //   [theme.breakpoints.up('lg')]: { marginTop: '85px' },
+  // },
 
   label: {
     textAlign: 'center',

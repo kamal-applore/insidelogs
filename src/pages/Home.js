@@ -17,26 +17,36 @@ const useStyles = makeStyles((theme) => ({
       paddingLeft: '130px',
     },
   },
+  marginTop: {
+    marginTop: '40px',
+    [theme.breakpoints.up('md')]: {
+      marginTop: '70px',
+    },
+    [theme.breakpoints.up('lg')]: {
+      // paddingLeft: '130px',
+      marginTop: '120px',
+    },
+  },
   heroSection: {
-    marginTop: '30px',
+    // marginTop: '30px',
     padding: '0px 10px',
     [theme.breakpoints.up('md')]: {
-      marginTop: '50px',
+      // marginTop: '50px',
       padding: 0,
     },
     [theme.breakpoints.up('lg')]: {
-      marginTop: '107px',
+      // marginTop: '107px',
     },
   },
   ourServices: {
-    marginTop: '50px',
+    // marginTop: '50px',
     padding: '0px 10px',
     [theme.breakpoints.up('md')]: {
-      marginTop: '50px',
+      // marginTop: '50px',
       padding: 0,
     },
     [theme.breakpoints.up('lg')]: {
-      marginTop: '107px',
+      // marginTop: '107px',
     },
   },
 }))
@@ -46,20 +56,24 @@ export default () => {
   return (
     <Layout>
       <div className={classes.root}>
-        <div className={classes.heroSection}>
+        <div className={classes.marginTop}>
           <HeroSection />
         </div>
-        <div className={classes.ourServices}>
+        <div className={classes.marginTop}>
           <OurServices />
         </div>
-        <div className={classes.ourServices}>
+        <div className={classes.marginTop}>
           <WhyUs />
         </div>
       </div>
       {/* < */}
-      <CTABanner />
+      <CTABanner
+        heading="We are here to help brightest minds to endeavor their endless success"
+        label="Brightest Minds, Impactful Opportunities"
+        button="Join with Us"
+      />
       <div className={classes.root}>
-        <div className={classes.ourServices}>
+        <div className={classes.marginTop}>
           <Contact />
         </div>
       </div>
