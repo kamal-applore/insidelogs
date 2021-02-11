@@ -6,6 +6,7 @@ import NavbarItems from './NavbarItems'
 import CloseIcon from '@material-ui/icons/Close'
 import MenuIcon from '@material-ui/icons/Menu'
 import Logo from './Logo'
+import { withRouter } from 'react-router-dom'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -60,7 +61,7 @@ const useStyles = makeStyles((theme) => ({
     cursor: 'pointer',
   },
 }))
-export default () => {
+const Header = () => {
   const classes = useStyles()
   const [sidebar, setSidebar] = useState(false)
   const showSidebar = () => setSidebar(!sidebar)
@@ -95,3 +96,5 @@ export default () => {
     </>
   )
 }
+
+export default withRouter(Header)

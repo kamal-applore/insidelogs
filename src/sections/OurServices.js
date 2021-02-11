@@ -7,20 +7,20 @@ import CustomLabel from '../components/CustomLabel'
 import Title from '../components/Title'
 
 const useStyles = makeStyles((theme) => ({
-  content: {
-    marginTop: '30px',
+  // content: {
+  //   marginTop: '30px',
 
-    [theme.breakpoints.up('md')]: {
-      //   fontSize: '16px',
-      //   lineHeight: '24px',
-      marginTop: '50px',
-    },
-    [theme.breakpoints.up('lg')]: {
-      //   fontSize: '16px',
-      //   lineHeight: '24px',
-      marginTop: '85px',
-    },
-  },
+  //   [theme.breakpoints.up('md')]: {
+  //     //   fontSize: '16px',
+  //     //   lineHeight: '24px',
+  //     marginTop: '50px',
+  //   },
+  //   [theme.breakpoints.up('lg')]: {
+  //     //   fontSize: '16px',
+  //     //   lineHeight: '24px',
+  //     marginTop: '85px',
+  //   },
+  // },
   heading: {
     marginTop: '20px',
     marginBottom: '20px',
