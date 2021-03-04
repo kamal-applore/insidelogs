@@ -50,7 +50,8 @@ export default function ContactForm() {
         <Grid item xs={12} md={12}>
           <CustomInput placeholder="EMAIL" value={email} handleChange={setEmail} />
         </Grid>
-        <Grid item xs={12} md={12} lg={6}>
+
+        <Grid item xs={12} md={12} lg={6} style={{ margin: '0px auto' }}>
           <CustomButton text="SEND MESSAGE" className={classes.button} />
         </Grid>
       </Grid>

@@ -10,6 +10,7 @@ import WhyUs from '../sections/WhyUs'
 
 const useStyles = makeStyles((theme) => ({
   root: {
+    padding: '0px 15px',
     [theme.breakpoints.up('md')]: {
       paddingLeft: '70px',
     },

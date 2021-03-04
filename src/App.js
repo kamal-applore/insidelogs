@@ -5,9 +5,11 @@ import Theme from './theme/theme'
 
 function App() {
   return (
-    <ThemeProvider theme={Theme}>
-      <Routes />
-    </ThemeProvider>
+    <div style={{ maxWidth: '1920px', display: 'block', marginLeft: 'auto', marginRight: 'auto' }}>
+      <ThemeProvider theme={Theme}>
+        <Routes />
+      </ThemeProvider>
+    </div>
   )
 }
 
