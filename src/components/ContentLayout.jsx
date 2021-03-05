@@ -1,4 +1,4 @@
-import { Grid, Hidden, makeStyles } from '@material-ui/core'
+import { Box, Grid, Hidden, makeStyles } from '@material-ui/core'
 import React from 'react'
 import CustomButton from './CustomButton'
 import CustomHeading from './CustomHeading'
@@ -87,12 +87,17 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   image: {
-    width: '100%',
+    // width: '100%',
     marginTop: '10px',
+    borderRadius: '50%',
 
+    display: 'flex',
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    width: '50%',
+    marginBottom: '10px',
     [theme.breakpoints.up('md')]: {
       marginTop: '28px',
-      width: '90%',
     },
     [theme.breakpoints.up('lg')]: {
       marginTop: '28px',
@@ -114,6 +119,55 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up('lg')]: {
       margin: '0px 0px 38px 0px',
       fontSize: '40px',
+      // width: '90%',
+    },
+  },
+  teamHeading: {
+    // textAlign: 'center',
+    fontWeight: theme.typography.fontWeightBold,
+    // [theme.breakpoints.up('md')]: {
+    fontSize: '14px',
+    // paddingLeft: '7px',
+    textAlign: 'center',
+    // },
+  },
+  teamLabel: {
+    // textAlign: 'center',
+    // fontWeight: theme.typography.fontWeightBold,
+    // [theme.breakpoints.up('md')]: {
+    fontSize: '12px',
+    // paddingLeft: '15px',
+    textAlign: 'center',
+    margin: 0,
+    lineHeight: '15px',
+    // },
+  },
+  teamContent: {
+    // display: 'grid',
+    // margin: '0px auto',
+    [theme.breakpoints.up('md')]: {
+      '&:nth-child(odd)': {
+        [theme.breakpoints.up('md')]: {
+          paddingTop: '0px',
+        },
+      },
+      '&:nth-child(even)': {
+        paddingTop: '40px',
+        [theme.breakpoints.up('md')]: { paddingTop: '81px' },
+        [theme.breakpoints.up('lg')]: { paddingTop: '62px' },
+      },
+    },
+  },
+  serviceImage: {
+    width: '100%',
+    marginTop: '10px',
+
+    [theme.breakpoints.up('md')]: {
+      marginTop: '28px',
+      width: '90%',
+    },
+    [theme.breakpoints.up('lg')]: {
+      marginTop: '28px',
       // width: '90%',
     },
   },
@@ -149,17 +203,35 @@ export default function ContentLayout({
   gridSize = 5,
   team,
   blog,
+  service,
 }) {
   const classes = useStyles()
   return (
     <>
       {title1 && title2 ? <Title heading={title1} heading2={title2} /> : null}
-      {team ? (
+      {service ? (
+        <>
+          <Grid container>
+            {service.map((item, index) => (
+              <Grid item xs={12} md={4} key={index}>
+                <CustomImage image={item} className={classes.serviceImage} />
+              </Grid>
+            ))}
+          </Grid>
+        </>
+      ) : team ? (
         <>
           <Grid container>
             {team.map((item, index) => (
-              <Grid item xs={12} md={4} key={index}>
-                <CustomImage image={item} className={classes.image} />
+              <Grid item xs={12} md={2} lg={2} key={index} className={classes.teamContent}>
+                <br />
+                <div>
+                  <CustomImage image={item.image} className={classes.image} />
+                </div>
+                <Box textAlign="center">
+                  <CustomHeading heading={item.name} className={classes.teamHeading} />
+                  <CustomLabel label={item.position} className={classes.teamLabel} />
+                </Box>
               </Grid>
             ))}
           </Grid>

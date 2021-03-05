@@ -32,6 +32,9 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     // justifyContent: 'center',
     margin: '0px auto',
+    '&:hover': {
+      backgroundColor: theme.palette.common.white,
+    },
     [theme.breakpoints.up('md')]: {
       padding: '5px 40px',
       margin: 0,

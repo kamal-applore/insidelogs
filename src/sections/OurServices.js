@@ -58,23 +58,23 @@ export default function OurServices() {
     {
       title: 'Web Development',
       subTitle:
-        "We are a professionally recognized website designing, internet marketing and software development company having huge experience in developing corporate designing, software development and digital marketing best match to customer's need and requirements. We have expertise in wor",
+        'Your website is the most visible asset, and it is the first impression of your company. Inside logos expertise in developing a multifunctional, robust, dynamic, and scalable website. A Full-Service with Excellence in Web Design & Development Services. We design and develop a wide variety of websites. Create user-centric designs for a successful engagement and user experience.',
     },
     {
       title: 'Database Analysis',
       subTitle:
-        "We are a professionally recognized website designing, internet marketing and software development company having huge experience in developing corporate designing, software development and digital marketing best match to customer's need and requirements. We have expertise in wor",
+        "Every business needs a well-designed database management tool. Without a database, you have no clue what is occurring within your company. You can quickly input information and keep track of your activities, monitoring your business's progression. We design and create countless tools, frameworks, and platforms to help your company.",
     },
     {
       title: 'Server Security',
       subTitle:
-        "We are a professionally recognized website designing, internet marketing and software development company having huge experience in developing corporate designing, software development and digital marketing best match to customer's need and requirements. We have expertise in wor",
+        'Server is heart of every organization. We build tools to help small and medium-sized organizations around the world control their web security. We know that proper tools can bridge the gap between security and development to reduce stress.',
     },
   ]
   return (
     <div>
       <ContentLayout
-        heading="Inside Logs provide wide range of digital services from full fledged Web Development to Security to support your buisness"
+        heading="We are dedicated to developing software that is 100% suited to your needs. Inside Logs will work in accordance with the preferred project management methodology."
         title1="OUR"
         title2="SERVICES"
       >
@@ -82,6 +82,7 @@ export default function OurServices() {
           <div key={index} className={classes.content}>
             <CustomHeading heading={item.title} />
             <CustomLabel label={item.subTitle} className={classes.label} />
+            <br />
           </div>
         ))}
       </ContentLayout>

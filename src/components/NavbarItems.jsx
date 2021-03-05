@@ -62,7 +62,7 @@ export default () => {
     { navItem: 'About', url: ROUTES.ABOUT },
     { navItem: 'Blog', url: ROUTES.BLOG },
     { navItem: 'Contact', url: ROUTES.CONTACT },
-    { logo: 'logo' },
+    // { logo: 'logo' },
   ]
   const history = useHistory()
   const location = useLocation()

@@ -61,9 +61,7 @@ export default function WhyUs() {
   return (
     <div>
       <ContentLayout
-        heading="Inside Logs have expert workers who
-        withstand with your work and create an 
-        well experience for your buisness"
+        heading="Inside Logs offers top-notch custom types of assistance for any development project, at any scale.        "
         title1="WHY"
         title2="US"
       >
